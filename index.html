@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Панель управления студентами</title>
+</head>
+
+<body>
+
+    <h1>Панель управления студентами</h1>
+
+    <div>
+        <h2>Добавить нового студента</h2>
+        <form id="studentForm">
+            <label>Фамилия: <input type="text" id="lastName" required></label>
+            <label>Имя: <input type="text" id="firstName" required></label>
+            <label>Отчество: <input type="text" id="middleName" required></label>
+            <label>Дата рождения: <input type="date" id="birthDate" required></label>
+            <label>Год начала обучения: <input type="number" id="startYear" min="2000" required></label>
+            <label>Факультет: <input type="text" id="faculty" required></label>
+            <button type="submit">Добавить студента</button>
+        </form>
+        <div id="errorMessages" class="error"></div>
+    </div>
+
+    <div>
+        <h2>Фильтры</h2>
+        <label>Ф. И. О.: <input type="text" id="searchName"></label>
+        <label>Факультет: <input type="text" id="searchFaculty"></label>
+        <label>Год начала обучения: <input type="number" id="searchStartYear" min="2000"></label>
+        <label>Год окончания обучения: <input type="number" id="searchEndYear" min="2000"></label>
+    </div>
+
+    <table id="studentsTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable('fullName')">Ф. И. О.</th>
+                <th onclick="sortTable('faculty')">Факультет</th>
+                <th onclick="sortTable('birthDate')">Дата рождения и возраст</th>
+                <th onclick="sortTable('startYear')">Годы обучения</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Студенты будут добавлены сюда через JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
